@@ -3,8 +3,12 @@ package ActividadesTema1;
 public class Actividad1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		float Hola;
+		Hola = (int) 5.5;
+		
+		System.out.println(Hola);
+		
+		
 	}
 
 }
