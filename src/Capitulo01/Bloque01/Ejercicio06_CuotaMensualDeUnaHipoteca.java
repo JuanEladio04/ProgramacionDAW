@@ -44,11 +44,10 @@ public class Ejercicio06_CuotaMensualDeUnaHipoteca {
 		
 		double iAnual = Math.sqrt(euribor + diferencial);
 		double iMensual = Math.sqrt((iAnual/12)/100);
-		double cMensual = Math.sqrt(capital*(iMensual*((Math.pow((1+iMensual), N))/
-												(Math.pow((1+iMensual), N)-1))));
+		double cMensual = Math.sqrt(capital*(iMensual*(Math.pow((1+iMensual), N))/(Math.pow((1+iMensual), N)-1)));
 		System.out.println("La cuota mensual tendría un valor de: "
 				+ "\n" + cMensual
-				);
+		);
 	
 		
 		

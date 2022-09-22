@@ -1,4 +1,4 @@
-package Apuntes;
+package Apuntes.copy;
 
 public class NumerosYVariables {
 
@@ -26,12 +26,10 @@ public class NumerosYVariables {
 		
 		System.out.println(brodel + bruh + numEntero);
 		
-		java.lang.String palabra = "nombre de la variable"; //Solo para valores no numericos. Los números escritos aqui seran considerados parte del texto.
+		String palabra = "nombre de la variable"; //Solo para valores no numericos. Los números escritos aqui seran considerados parte del texto.
 //		En caso de suma de ina variable de numeros (int, float, bouble...) con una cadena de caracteres (string) dara un fallo ya que los string tienen la finalidad de concatenar
 //		para concatenar variebles numericas es necesario convertirlas en string.
 		int Cnumero = 32;
-		
-		System.out.println(palabra + Cnumero);
 			
 	}
 
