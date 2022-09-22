@@ -16,11 +16,16 @@ public class Ejercicio01_NumeroMayorEntreDos {
 		String strnum2 = JOptionPane.showInputDialog("Introduzca el segundo número: ");
 			int num2 = Integer.parseInt(strnum2);
 		
-		if (num1 > num2) {
-			System.out.println("El numero mayor es: " + num1);
+		if (num1 == num2) {
+			System.out.println("Deben ser dos números diferentes");
 		}
 		else {
-			System.out.println("El número mayor es: " + num2);
+			if (num1 > num2) {
+				System.out.println("El número mayor es:" + num1);
+			}
+			else {
+				System.out.println("El número mayor es:" + num2);
+			}
 		}
 	}
 
