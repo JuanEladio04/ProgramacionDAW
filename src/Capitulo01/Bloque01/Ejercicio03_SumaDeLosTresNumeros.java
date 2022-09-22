@@ -2,6 +2,10 @@ package Capitulo01.Bloque01;
 
 import java.util.Scanner;
 
+/*
+ * 3.- Realiza un programa que pida al usuario tres números y calcule y muestre en pantalla la suma de los tres.
+ */
+
 public class Ejercicio03_SumaDeLosTresNumeros {
 
 	public static void main(String[] args) {

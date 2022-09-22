@@ -2,6 +2,10 @@ package Capitulo01.Bloque01;
 
 import java.util.Scanner;
 
+/*
+ * 2.- Realiza un programa igual al anterior, con la particularidad de que ahora se debe mostrar cada número justo a continuación del momento en que ha sido introducido.
+ */
+
 public class Ejercicio02_NumerosJustoDespuesDeIntroducirlos {
 
 	public static void main(String[] args) {

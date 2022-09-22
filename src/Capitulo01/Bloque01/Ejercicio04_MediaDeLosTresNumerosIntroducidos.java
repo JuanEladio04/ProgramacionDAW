@@ -2,6 +2,10 @@ package Capitulo01.Bloque01;
 
 import java.util.Scanner;
 
+/*
+ * 4.- Realiza un programa que muestre la media de tres números introducidos.
+ */
+
 public class Ejercicio04_MediaDeLosTresNumerosIntroducidos {
 
 	public static void main(String[] args) {
