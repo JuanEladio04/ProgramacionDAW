@@ -10,14 +10,18 @@ public class Ejercicio01_TresNumerosEnUnaSolaLineaDeSalida {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		int nEntero;
+		float nFlotante;
+		double nDoble;
+		
 		System.out.println("Introduzca un número entero: ");
-		int nEntero = sc.nextInt();
+		nEntero = sc.nextInt();
 		
 		System.out.println("Introduzca un número flotante :");
-		float nFlotante = sc.nextFloat();
+		nFlotante = sc.nextFloat();
 		
 		System.out.println("Introduzca u número doble: ");
-		double nDoble = sc.nextDouble();
+		nDoble = sc.nextDouble();
 		
 		
 		System.out.println("El número entero es: " + nEntero + " El numero flotante es: " + nFlotante + " El número Doble es: " + nDoble );

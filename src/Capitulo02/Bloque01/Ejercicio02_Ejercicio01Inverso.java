@@ -3,10 +3,9 @@ package Capitulo02.Bloque01;
 import javax.swing.JOptionPane;
 
 /*
- * 1º.- Realiza un ejercicio que pida dos variables al usuario, tras lo cual, muestre en pantalla el número mayor de los dos introducidos.
+ * 2º.- Repetir el ejercicio anterior para mostrar el número menor de los dos introducidos .
  */
-
-public class Ejercicio01_NumeroMayorEntreDos {
+public class Ejercicio02_Ejercicio01Inverso {
 
 	public static void main(String[] args) {
 
@@ -25,11 +24,11 @@ public class Ejercicio01_NumeroMayorEntreDos {
 			System.out.println("Deben ser dos números diferentes");
 		}
 		else {
-			if (num1 > num2) {
-				System.out.println("El número mayor es: " + num1);
+			if (num1 < num2) {
+				System.out.println("El número menor es: " + num1);
 			}
 			else {
-				System.out.println("El número mayor es: " + num2);
+				System.out.println("El número menor es: " + num2);
 			}
 		}
 		
