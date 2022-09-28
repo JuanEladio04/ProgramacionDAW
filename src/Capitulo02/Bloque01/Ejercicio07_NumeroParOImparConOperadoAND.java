@@ -26,5 +26,4 @@ public class Ejercicio07_NumeroParOImparConOperadoAND {
 		
 		
 	}
-
 }
