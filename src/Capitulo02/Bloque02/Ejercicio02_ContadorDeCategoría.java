@@ -33,15 +33,18 @@ public class Ejercicio02_ContadorDeCategoría {
 		}
 		else {
 			if (num < 25) {
-				nPequenios = nPequenios + 1;
+//				nPequenios = nPequenios + 1;
+				nPequenios++;
 			}
 			else {
 				if (num < 250) {
-					nMedios = nMedios + 1;
+//					nMedios = nMedios + 1;
+					nMedios++;
 				}
 				else {
 					if (num > 250) {
-						nGrandes = nGrandes + 1;
+//						nGrandes = nGrandes + 1;
+						nGrandes++;
 					}
 				}
 			}
@@ -96,7 +99,7 @@ public class Ejercicio02_ContadorDeCategoría {
 		}
 		
 		
-		System.out.println("Introduce el cuerto número: ");
+		System.out.println("Introduce el cuarto número: ");
 		num4 = sc.nextInt();
 		num = num4;
 		
