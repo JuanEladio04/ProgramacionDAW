@@ -28,7 +28,7 @@ public class Ejercicio02_SumaNumerosMayoresDe10ElUsuarioEscoge {
 			}
 			
 		}
-		System.out.println("El resultado de la suma es " + num2);
+		JOptionPane.showMessageDialog(null, "El resultado de la suma es " + num2);
 		
 	}
 }
