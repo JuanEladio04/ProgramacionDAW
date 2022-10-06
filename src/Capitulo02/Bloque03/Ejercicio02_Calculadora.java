@@ -26,15 +26,14 @@ public class Ejercicio02_Calculadora {
 		
 		switch (opcion) {
 		case 1: {
-			double numd;
 			ventana = JOptionPane.showInputDialog("Número del que desea hacer la raiz");
 			num1 = Integer.parseInt(ventana);
 			ventana = JOptionPane.showInputDialog("Introduce el índice de la raiz");
-			numd = Double.parseDouble(ventana);
+			num2 = Integer.parseInt(ventana);
 
 			System.out.println(
 					"La raíz del número " + num1 +  " es: " + 
-					"\n" + ((Math.pow(num1, 1/numd)))
+					"\n" + ((Math.pow(num1, 1f/num2)))
 					);
 			break;
 		}
