@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class Ejercicio03_TablasDeMultiplicar {
 
 	public static void main(String[] args) {
-		int num = 1, mu;
+		int num = 1 ;
 		String ventana;
 		
 		for (int i = 0 ;num != 0; i++) {
