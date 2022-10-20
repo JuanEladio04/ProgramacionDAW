@@ -14,7 +14,7 @@ public class Ejercicio04 {
 			divisor = numAzar;
 			while (divisor != 0) { // con este bucle nos aeguraremos que el resto de las divisiones sea 0 y de esta manera imprimir los numeros que sean sus divisiroes.
 				if ((numAzar % divisor) == 0) {
-					System.out.println(divisor + " Es multiplo de " + numAzar);
+					System.out.println(divisor + " Es divisores de " + numAzar);
 				}
 				divisor--; 
 			}
