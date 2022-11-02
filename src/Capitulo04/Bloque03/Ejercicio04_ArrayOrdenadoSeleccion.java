@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class Ejercicio04_ArrayOrdenadoSeleccion {
 
 	public static void main(String[] args) {
-		int vector [] = Utils.creaArrayNumerosAzar(5, 1000, 0), save, menor = 0;
+		int vector [] = Utils.creaArrayNumerosAzar(150, 1000, 0), save, menor = 0;
 		boolean ordenado = false;
 		
 		System.out.println("La secuencia de numeros es: ");
