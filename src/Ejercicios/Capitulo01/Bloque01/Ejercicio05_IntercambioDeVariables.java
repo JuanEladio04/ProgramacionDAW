@@ -1,4 +1,4 @@
-package Capitulo01.Bloque01.copy;
+package Ejercicios.Capitulo01.Bloque01;
 
 import java.util.Scanner;
 
