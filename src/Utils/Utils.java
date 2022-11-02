@@ -1,4 +1,4 @@
-package Capitulo04.Bloque03;
+package Utils;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
 package Capitulo04.Bloque03;
 
-
+import Utils.Utils;
 
 //2º.- Realiza un ejercicio que inicialice un array de 150 elementos enteros al azar entre 0 y 1.000. Una vez que lo hayas conseguido debes realizar implementar el algoritmo de ordenación llamado "Inserción directa", con el objetivo de ordenar el array completamente. Puedes consultar el siguiente enlace http://lwh.free.fr/pages/algo/tri/tri_insertion_es.html
 
