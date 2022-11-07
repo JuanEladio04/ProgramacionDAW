@@ -53,6 +53,49 @@ public class Utils {
         String str = JOptionPane.showInputDialog(mensaje);
         return  Integer.parseInt(str);
     }
+    
+    /**
+     * 
+     * @param limSup
+     * @param limInf
+     */
+    
+    public static void mensajeUsuarioLimites(int limSup, int limInf) {
+    	System.out.println("Introduce un numero entre " + limSup + " y " + limInf);
+	}
+    
+    /**
+     * 
+     * @param limSup
+     * @param limInf
+     * @return
+     */
+    
+    public static int pedirNumeroEntreLimites(int limSup, int limInf, String mensaje) {	
+    	boolean dentroLimites;	
+    	int valor = 0;
+    	do {
+    		try {
+    			dentroLimites = true;
+    			valor = Utils.pideNumeroJOptionPane(mensaje);
+    			
+    			if (valor > limSup || valor < limInf) {
+    				dentroLimites = false;
+        			  Utils.mensajeUsuarioLimites(limSup, limInf);
+    			}
+    		}
+    		  catch (Exception e) {
+    			  Utils.mensajeUsuarioLimites(limSup, limInf);
+    			  dentroLimites = false;
+    		  }
+		}while (!dentroLimites);
+    	
+    	return valor;
+    }
+
+			
+			
+
    
     //Scanner-------------------------------------------------------------------------------------------------
     
