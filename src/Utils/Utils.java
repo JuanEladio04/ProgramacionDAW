@@ -123,19 +123,19 @@ public class Utils {
   //Arrays-------------------------------------------------------------------------------------------------
 
 /**
- *   
+ * 
  * @param longitud
- * @param max
- * @param min
+ * @param limInf
+ * @param limSup
  * @return
  */
-  public static int[] creaArrayNumerosAzar (int longitud, int max, int min) {
-      int array[] = new int[longitud];
-      for (int i = 0; i < array.length; i++) {
-          array[i] = Utils.obtenerNumeroAzar(max, min);
-      }
-      return array;
-  }
+	public static int[] creaArrayNumerosAzar (int longitud, int limInf, int limSup) {
+		int array[] = new int[longitud];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = Utils.obtenerNumeroAzar(limInf, limSup);
+		}
+		return array;
+	}
   
   /**
    * 
