@@ -139,6 +139,21 @@ public class Utils {
   
   /**
    * 
+   * @param longitud
+   * @param max
+   * @param min
+   * @return
+   */
+  public static float[] getArrayWithDecimals (int longitud, int max, int min) {
+      float array[] = new float[longitud];
+      for (int i = 0; i < array.length; i++) {
+          array[i] = (float) Math.random();
+      }
+      return array;
+  } 
+  
+  /**
+   * 
    * @param array
    */
   
@@ -148,6 +163,16 @@ public class Utils {
       }
       System.out.println();
   }
+  
+  /**
+   * 
+   * @param array
+   */
+	public static void showArrayWithDecimals(float array[]) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+	}
   
   /**
    * 

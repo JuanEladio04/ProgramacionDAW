@@ -3,7 +3,6 @@ package Utils;
 public class UtilsMatrices {
 
 	public static void main(String[] args) {
-		CreaMatriz(8, 8, 0);
 
 	}
 	
