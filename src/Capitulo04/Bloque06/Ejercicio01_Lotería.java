@@ -10,11 +10,10 @@ public class Ejercicio01_Lotería {
 
 	public static void main(String[] args) {
 		System.out.println("El número de la lotería es: ");
-		int nLoteria[] = Utils.creaArrayNumerosAzar(7, 49, 1);
+		int nLoteria[] = Utils.creaArrayNumerosAzarSinRepeticiones(7, 49, 1);
 		mostrarLotería(nLoteria);
 
 	}
-
 	
 	private static void mostrarLotería(int array[]) {
 		for (int i = 0; i < array.length-1; i++) {
@@ -22,4 +21,6 @@ public class Ejercicio01_Lotería {
 		}
 		System.out.print(" complementario: " + array[array.length - 1]);
 	}
+	
+
 }

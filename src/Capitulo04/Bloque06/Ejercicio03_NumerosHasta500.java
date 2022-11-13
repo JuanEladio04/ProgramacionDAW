@@ -9,8 +9,8 @@ import Utils.Utils;
 public class Ejercicio03_NumerosHasta500 {
 
 	public static void main(String[] args) {
-		int suma = 0, contador = 1;
-		float media = 0; 
+		int contador = 1;
+		float media = 0, suma = 0; 
 		
 		System.out.println("Secuencia de números: ");
 		

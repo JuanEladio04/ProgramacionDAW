@@ -230,6 +230,26 @@ public class Utils {
     return menor;
   }
   
+  /**
+   * 
+   * @param longitud
+   * @param limInf
+   * @param limSup
+   * @return
+   */
+  
+	public static int[] creaArrayNumerosAzarSinRepeticiones (int longitud, int limInf, int limSup) {
+		int array[] = new int[longitud];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = Utils.obtenerNumeroAzar(limInf, limSup);
+			for (int j = i - 1; j >= 0; j--) {
+				if (array[i] == array[j]) array[i] = Utils.obtenerNumeroAzar(limInf, limSup);
+			}
+			
+		}
+		return array;
+	}
+  
 
 
 }
