@@ -32,7 +32,7 @@ public class Ejercicio04_MatrizConBordes {
 			}
 		}
 		
-//		Por ultimo generamoe el 0 en una posición aleatoria;
+//		Por ultimo generamos el 0 en una posición aleatoria;
 		
 		marco[fila][columna] = '0';
 		

@@ -20,21 +20,35 @@ import Utils.Utils;
 public class Ejercicio04_MatrizConMetodos {
 
 	public static void main(String[] args) {
-//		int matriz[][] = CreaMatriz(5, 5);
-		int matriz[][] = new int [][] {{1, 1, 0, 1, 1},
-									   {1, 1, 0, 1, 1},
-									   {1, 1, 0, 1, 1},
-									   {1, 1, 0, 1, 1},
-									   {1, 1, 0, 1, 1}};
+		int fila, columna;
+		int matriz[][] = CreaMatriz(5, 5);
+//		int matriz[][] = new int [][] {{0, 1, 1, 1, 1},
+//									   {1, 0, 1, 1, 1},
+//									   {1, 1, 0, 1, 1},
+//									   {1, 1, 1, 0, 1},
+//									   {0, 1, 1, 1, 1}};
 		
 		muestraMatriz(matriz);
 		esMatrizPositiva(matriz);
 		esMatrizDiagonal(matriz);
 		esMatrizTriangularSuperior(matriz);
 		esMatrizDispersa(matriz);
+		System.out.println("Matriz unidimensional: ");
 		int array[] = matrizUnidimensional(matriz);
 		System.out.println();
 		esMatrizSimetrica(matriz);
+		System.out.println("Matriz traspuesta");
+		int mTraspuesta [][]= creaMatrizTraspuesta(matriz);
+		muestraMatriz(mTraspuesta);
+		System.out.println("Matriz Opuesta");
+		int mOpuesta[][] = creaMatrizOpuesta(matriz);
+		muestraMatriz(mOpuesta);
+		System.out.println("Matriz eliminando número: ");
+		fila = Utils.pideNumeroJOptionPane("Introduzca la fila del número a eliminar: ");
+		columna = Utils.pideNumeroJOptionPane("Introduzca la columna del número a eliminar: ");
+		int mEliminandoNumero[][] = matrizEliminandoNúmero(matriz, fila, columna);
+		muestraMatriz(mEliminandoNumero);
+		
 	}
 	
 	
@@ -112,42 +126,46 @@ public class Ejercicio04_MatrizConMetodos {
 	}
 
 	public static void esMatrizDispersa(int matriz [][]) {
-		int contadorLineas = 1,contadorColumnas = 1 ;
-		boolean tieneNulo = false;
-		
+		boolean hayCeros = false;
+		//Buscamos los ceros en las filas
 		for (int i = 0; i < matriz.length; i++) {
-			if (tieneNulo == true) contadorLineas++;
-			tieneNulo = false;
-			for (int j = 0; j < matriz[i].length && tieneNulo == false; j++) {
-				if (matriz[i][j] == 0) tieneNulo = true;
+			hayCeros = false;
+			for (int j = 0; j < matriz[i].length; j++) {
+				if (matriz[i][j] == 0) hayCeros = true;
+			}
+			//En caso de no encontrar lo notificamos
+			if (!hayCeros) {
+				System.out.println("La matriz no es dispersa");
+				break;
 			}
 		}
-		
-		tieneNulo = false;
-		
-		for (int i = 0; i < matriz.length; i++) {
-			if (tieneNulo == true) contadorColumnas++;
-			tieneNulo = false;
-			for (int j = 0; j < matriz[i].length && tieneNulo == false; j++) {
-				if (matriz[j][i] == 0) tieneNulo = true;
+		 //Buscamos ceros en las columnas
+		for (int i = 0; i < matriz[0].length; i++) {
+			hayCeros = false;
+			for (int j = 0; j < matriz.length; j++) {
+				if(matriz[i][j] == 0) hayCeros = true;
+			}
+			//En caso de no encontrar ceros lo notificamos
+			if (!hayCeros) {
+				System.out.println("La matriz no es dispersa");
+				break;
 			}
 		}
-		
-		if(contadorLineas == matriz.length  && contadorColumnas == matriz.length)System.out.println("La matriz es dispersa");
-		else System.out.println("La matriz no es dispersa");
+		//Por ultimo en caso de que sea correcto devolvemos el resultado
+		if (hayCeros == true) System.out.println("La matriz es dispersa");
 	}
 	
 	public static int[] matrizUnidimensional(int matriz [][]) {
 		int suma = 0;
 		for (int i = 0; i < matriz.length; i++) {
-			suma = suma + matriz[i].length;
+			suma = suma + matriz[i].length; 
 		}
 		int array [] = new int [suma], k = 0;
 		
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[i].length; j++) {
 				array[k] = matriz [i][j];
-				System.out.print(array[k]);
+				System.out.print(array[k] + " ");
 				k++;
 			}
 		}
@@ -157,20 +175,69 @@ public class Ejercicio04_MatrizConMetodos {
 
 	public static void esMatrizSimetrica(int matriz [][]) {
 		boolean esSimetrica = true;
-		
-		for (int i = 0; i < matriz.length && esSimetrica == true; i++) {
-			for (int j = 0; j < matriz[i].length && esSimetrica == true; j++) {
-				while (j < matriz[i].length/2) {
-					if (matriz[i][j] == matriz [j][i]) esSimetrica = true;
-					else {
-						esSimetrica = false;
-						break;
-					}
-				}
+		//Con este bucle comprobaremos que sea simétrica
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length && i != j; j++) {
+				//Verificamos que ambos valores sean iguales
+				if (matriz[i][j] != matriz[j][i]) esSimetrica = false;
+			}
+			//En caso de no ser simétrica saldremos del bucle
+			if (!esSimetrica) {
+				System.out.println("La matriz no es simétrica");
+				break;
 			}
 		}
-		if (esSimetrica == true) System.out.println("La matriz es simétrica");
-		else System.out.println("La matriz no es simétrica");
+
+		if (esSimetrica == true) {
+			System.out.println("La matriz es simétrica");
+		}
+	}	
+	
+	public static int[][] creaMatrizTraspuesta(int matriz[][]) {
+		//Creamos una matriz con los datos de las filas y las columnas opuestos a los de nuestra matriz normal
+		int nTraspuesta [][] = new int [matriz[0].length][matriz.length];
+ 		
+		//Creamos un buble para asignar valores
+		for (int i = 0; i < nTraspuesta.length; i++) {
+			for (int j = 0; j < nTraspuesta[i].length; j++) {
+				//Vamos asignando los valores de las filas a las columnas y viceversa
+				nTraspuesta[i][j] = matriz[j][i];
+			}
+		}
+		
+		return nTraspuesta;
 	}
 	
+	public static int[][] creaMatrizOpuesta(int matriz [][]) {
+		//Declaramos una matriz identica en estructura a la anterior
+		int mOpuesta [][] = new int [matriz.length][matriz[0].length];
+		
+		//Recorremos la nueva matriz mediante un bucle
+		for (int i = 0; i < mOpuesta.length; i++) {
+			for (int j = 0; j < mOpuesta[i].length; j++) {
+				//Por ultimo asignamos los valores
+				mOpuesta [i][j] = matriz [i] [(matriz[i].length - j) - 1];
+			}
+			
+		}
+		
+		return mOpuesta;
+		
+		}
+	
+	private static int[][] matrizEliminandoNúmero(int matriz[][], int fila, int columna) {
+		//Declaramos una matriz identica en estructura a la anterior
+		int mEliminando[][] = new int[matriz.length][matriz[0].length];
+		
+		//Recorremos la matriz colnando los valores
+		for (int i = 0; i < mEliminando.length; i++) {
+			for (int j = 0; j < mEliminando[i].length; j++) {
+				mEliminando[i][j] = matriz[i][j] ;
+			}
+		}
+		//Eliminamos el valor seleccionado por el usuario sustituyendolo por uno nulo
+		mEliminando[fila][columna] = 0;
+		return mEliminando;
+	}
+		
 }
