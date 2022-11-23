@@ -120,6 +120,28 @@ public class Utils {
       return sc.nextInt();
   }
   
+  /**
+   * 
+   * @param mensaje
+   * @return
+   */
+  public static String pideStringScanner () {
+      System.out.println("Introduce un dato.");
+      Scanner sc = new Scanner (System.in);
+      return sc.nextLine();
+  }
+  
+  /**
+   * 
+   * @param mensaje
+   * @return
+   */
+  public static String pideStringScanner (String mensaje) {
+      System.out.println(mensaje);
+      Scanner sc = new Scanner (System.in);
+      return sc.nextLine();
+  }
+  
   //Arrays-------------------------------------------------------------------------------------------------
 
 /**
@@ -243,7 +265,10 @@ public class Utils {
 		for (int i = 0; i < array.length; i++) {
 			array[i] = Utils.obtenerNumeroAzar(limInf, limSup);
 			for (int j = i - 1; j >= 0; j--) {
-				if (array[i] == array[j]) array[i] = Utils.obtenerNumeroAzar(limInf, limSup);
+				if (array[i] == array[j]) {
+					 array[i] = Utils.obtenerNumeroAzar(limInf, limSup);
+					 j = i;
+				}
 			}
 			
 		}

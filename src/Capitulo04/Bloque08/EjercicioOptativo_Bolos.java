@@ -7,14 +7,14 @@ public class EjercicioOptativo_Bolos {
 
 	public static void main(String[] args) {
 		boolean juegoTerminado = false;
-		int option, score = 0, juegos = 0, counter = 0;
+		int option, scorePlayer1= 0, juegos = 0, counter = 0;
 		int bolos[][] = new int [][] {{1, 0, 1, 0, 1, 0, 1},
 									  {0, 1, 0, 1, 0, 1, 0},
 									  {0, 0, 1, 0, 1, 0, 0},
 									  {0, 0, 0, 1, 0, 0, 0}};
 		
 		do {
-			System.out.println("Puntuación actual: " + score);
+			System.out.println("Puntuación actual: " + scorePlayer1);
 			System.out.println("Juegos jugados: " + juegos);
 			UtilsMatrices.muestraMatriz(bolos);
 			System.out.println("Opciones: " + "\n" + 
@@ -27,7 +27,7 @@ public class EjercicioOptativo_Bolos {
 			case 1:
 				counter = contarBolos(bolos);
 				bolos = throwBall(bolos);
-				score = score + scoreCounter(juegos, counter, bolos);
+				scorePlayer1= scorePlayer1+ scoreCounter(juegos, counter, bolos);
 				break;
 			
 			case 2: //Opción para salir del juego
