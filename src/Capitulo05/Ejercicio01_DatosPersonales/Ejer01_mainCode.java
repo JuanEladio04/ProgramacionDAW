@@ -1,14 +1,14 @@
 package Capitulo05.Ejercicio01_DatosPersonales;
 
+import java.util.Iterator;
+
 import Utils.Utils;
 
 public class Ejer01_mainCode {
 
 	public static void main(String[] args) {
-		int option, i = 1;
-		Persona  persona[] = new Persona[3];
-		String name ,surname, address, dni;
-		long phoneNumber;
+		int option, i = 0;
+		Persona persona[] = new Persona[10];
 		
 		do {
 			System.out.println("Introduce una opción:" + "\n" + 
@@ -21,14 +21,12 @@ public class Ejer01_mainCode {
 			
 			switch (option) { //Creamos el menú mediante un switch.
 			case 1: //Introducir datos personales;
-				name = Utils.pideStringScanner("Introduce el nombre.");
-				surname = Utils.pideStringScanner("Introduce los apellidos");
-				dni = Utils.pideStringScanner("Introduce el DNI.");
-				address = Utils.pideStringScanner("Introduce la dirección de la persona.");
-				phoneNumber = Utils.pideNumeroScanner("Introduce el número de teléfono");
-				
-				persona[i]  = new Persona(name, surname, dni, address, phoneNumber); //Añadimos los datos de las variables a Persona
-				
+				persona[i].setName(Utils.pideStringScanner("Introduce el nombre."));
+				persona[i].setSurname(Utils.pideStringScanner("Introduce los apellidos"));
+				persona[i].setDNI(Utils.pideStringScanner("Introduce el DNI."));
+				persona[i].setAddress(Utils.pideStringScanner("Introduce la dirección de la persona[i]."));
+				persona[i].setPhoneNumber(Utils.pideNumeroScanner("Introduce el número de teléfono"));
+								
 				System.out.println("Datos de la persona nº" + i + " han sido añadidos.");
 				
 				i++; //Añadimos un incremento para llevar la cuenta de las personas creadas.
@@ -37,9 +35,13 @@ public class Ejer01_mainCode {
 				
 			case 2:
 				System.out.println("Personas creadas: " + i); //Mostramos la cantidad de personas creadas
-				option = Utils.pideNumeroScanner("Introduce el número de la persona cuyos datos quieres visualizar."); //Pedimos al usuario el número de la persona que quiere visualizar
+//				option = Utils.pideNumeroScanner("Introduce el número de la persona cuyos datos quieres visualizar."); //Pedimos al usuario el número de la persona que quiere visualizar
 				
-				
+//				for (int j = 0; j < persona.lenght; j++) {
+//					System.out.println("Datos de la persona: " + j);
+					System.out.println(persona[i].ToString());
+
+//				}
 				
 				break;
 				
