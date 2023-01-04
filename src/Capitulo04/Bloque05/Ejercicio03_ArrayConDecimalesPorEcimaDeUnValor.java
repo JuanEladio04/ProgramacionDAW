@@ -1,8 +1,6 @@
 package Capitulo04.Bloque05;
 
-//3º.- Crea un array de 20 números decimales creados al azar entre 0 y 100. Para crear el número decimal debes generar al azar la parte entera y la parte decimal por separado para después unir las dos partes. A continuación debes examinar la cantidad de números cuya parte decimal está comprendida entre .00 y .49
-
-import Utils.Utils;
+import utils.Utils;
 
 public class Ejercicio03_ArrayConDecimalesPorEcimaDeUnValor {
 

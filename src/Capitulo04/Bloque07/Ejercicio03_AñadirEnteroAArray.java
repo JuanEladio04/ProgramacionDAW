@@ -1,6 +1,6 @@
 package Capitulo04.Bloque07;
 
-import Utils.Utils;
+import utils.Utils;
 
 //3.- Realiza un método llamado "addInteger", que reciba:
 //- Un array de números enteros.

@@ -1,6 +1,6 @@
 package Capitulo04.Bloque07;
 
-import Utils.Utils;
+import utils.Utils;
 
 //2.- Un método llamado "findAndReplace", que reciba:
 //- Un array de números enteros.

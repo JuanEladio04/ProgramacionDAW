@@ -1,6 +1,6 @@
 package Capitulo04.Bloque05;
 
-import Utils.Utils;
+import utils.Utils;
 
 //1º.- Crea un programa que reciba un array de números enteros creados al azar entre 0 y 100. Se debe examinar la longitud del array, comprobar que la longitud es un valor impar y devolver el valor que se encuentre en la posición media. En caso de que la longitud del array sea un número par se debe devolver un valor -1.
 

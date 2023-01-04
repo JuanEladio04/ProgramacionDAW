@@ -1,7 +1,7 @@
 package Capitulo04.Bloque08;
 
-import Utils.Utils;
-import Utils.UtilsMatrices;
+import utils.Utils;
+import utils.UtilsMatrices;
 
 public class EjercicioOptativo_Bolos {
 

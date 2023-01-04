@@ -2,7 +2,7 @@ package Capitulo04.Bloque05;
 
 import java.util.Iterator;
 
-import Utils.Utils;
+import utils.Utils;
 
 //4º.- Realiza un programa que cree un array bidimensional, una matriz, de 5 filas x 5 columnas. Una vez hecho el array, realiza estos pasos:
 //    - Crea un método que rellena la matriz con valores creados al azar.

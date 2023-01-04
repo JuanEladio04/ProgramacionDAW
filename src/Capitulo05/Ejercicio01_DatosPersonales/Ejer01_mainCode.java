@@ -1,8 +1,7 @@
 package Capitulo05.Ejercicio01_DatosPersonales;
 
-import java.util.Iterator;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class Ejer01_mainCode {
 
@@ -21,6 +20,7 @@ public class Ejer01_mainCode {
 			
 			switch (option) { //Creamos el menú mediante un switch.
 			case 1: //Introducir datos personales;
+				persona[i] = new Persona();
 				persona[i].setName(Utils.pideStringScanner("Introduce el nombre."));
 				persona[i].setSurname(Utils.pideStringScanner("Introduce los apellidos"));
 				persona[i].setDNI(Utils.pideStringScanner("Introduce el DNI."));

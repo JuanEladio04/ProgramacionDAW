@@ -1,7 +1,7 @@
 package examenes.examen20221213;
 
-import Utils.Utils;
 import examenes.examen20221213.objetos.Juego;
+import utils.Utils;
 
 public class Main {
 

@@ -1,6 +1,6 @@
 package Capitulo04.Bloque06;
 
-import Utils.Utils;
+import utils.Utils;
 
 //4º.- Realizar un programa que cree una matriz de tipo char, con 20 filas y 10 columnas. Los elementos que constituyen el borde de la matriz se deben rellenar, mediant bucles, con un asterisco. En el interior de la matriz, no en los bordes, debes crear un caracter '0' en una posición aleatoria. El resto de la matriz debe tener espacios en blanco. Muestra la matriz por consola. Ejemplo:
 //********************

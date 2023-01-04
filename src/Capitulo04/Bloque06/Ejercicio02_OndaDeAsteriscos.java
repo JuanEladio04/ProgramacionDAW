@@ -2,7 +2,7 @@ package Capitulo04.Bloque06;
 
 import java.util.Iterator;
 
-import Utils.Utils;
+import utils.Utils;
 
 //2.- Realiza un programa que dibuje en la pantalla una onda aleatoria de asteriscos. Para resolver este problema utilizarás matrices de tipo char. En un tipo char guardas un carácter. Por ejemplo, la línea "char variable = 'p';" crea una variable de tipo char y le asigna la letra 'p' minúscula. Crea una matriz de 10 filas y 30 posiciones por fila, de tipo char, a continuación genera en cada fila un número aleatorio de asteriscos, cuando acabes en cada fila de introducir asteriscos, rellena el resto de la fila con espacios en blanco. Finalmente muestra la matriz en consola. Ejemplo:
 //*********

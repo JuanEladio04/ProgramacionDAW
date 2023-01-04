@@ -1,6 +1,6 @@
 package Capitulo04.Bloque04;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class Ejercicio02_ArrayDesplazamientoPorUsuario {
 

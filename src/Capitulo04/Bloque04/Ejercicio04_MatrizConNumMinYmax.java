@@ -1,6 +1,6 @@
 package Capitulo04.Bloque04;
 
-import Utils.Utils;
+import utils.Utils;
 
 //4.- Realiza un programa que rellene un array de 6 filas por 10 columnas con números enteros positivos comprendidos entre 0 y 1000 (ambos incluidos). A continuación, el programa deberá dar la posición tanto del máximo como del mínimo. Los números dentro de la matriz no pueden repetirse.
 

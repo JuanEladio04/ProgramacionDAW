@@ -4,8 +4,8 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import Utils.Utils;
-import Utils.UtilsMatrices;
+import utils.Utils;
+import utils.UtilsMatrices;
 
 //7.- Programa el juego de las tres en raya.
 

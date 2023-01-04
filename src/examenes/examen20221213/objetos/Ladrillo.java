@@ -1,18 +1,14 @@
 package examenes.examen20221213.objetos;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class Ladrillo {
 	//Propiedades
-	String color;
-	int x;
-	int y;
-	int ancho;
-	int alto;
-	int puntosVida;
+	private String color;
+	private int x, y, ancho, alto, puntosVida;
 	
 	//Colores
-	String colors[] = new String [] {"Rojo", "Verde", "Azul"};
+	String colors[] = new String [] {"Rojo", "Verde", "Azul"}; //Seria erroneo, la variante debe ser estática
 	
 	//Métodos
 
@@ -25,7 +21,7 @@ public class Ladrillo {
 		Ladrillo ladrillo = new Ladrillo(color, Utils.obtenerNumeroAzar(0, 800), Utils.obtenerNumeroAzar(0, 500), 100, 50, Utils.obtenerNumeroAzar(1, 3));
 		
 		if(ladrillo.getPuntosVida() == 1) {
-			ladrillo.setColor(colors[Utils.obtenerNumeroAzar(0, 2)]);
+			ladrillo.setColor(this.colors[Utils.obtenerNumeroAzar(0, 2)]);
 		}
 		else {
 			if (ladrillo.getPuntosVida() == 2) {

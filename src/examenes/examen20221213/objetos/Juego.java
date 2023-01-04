@@ -2,7 +2,7 @@ package examenes.examen20221213.objetos;
 
 import java.util.Arrays;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class Juego {
 	//Propiedades

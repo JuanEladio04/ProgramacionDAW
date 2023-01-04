@@ -1,6 +1,6 @@
 package Capitulo04.Bloque07;
 
-import Utils.Utils;
+import utils.Utils;
 
 //5.- Realiza un método llamado "removeInteger", que reciba:
 //- Un array de números enteros.

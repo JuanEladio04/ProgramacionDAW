@@ -1,6 +1,6 @@
 package examenes.examen20221123;
 
-import Utils.Utils;
+import utils.Utils;
 
 //(2,5 puntos) Crea una clase con un método “main” que cree un array de 5 posiciones con números
 //generados al azar entre 0 y 100. Muestra el array. Crea un nuevo array de 5 posiciones en el que

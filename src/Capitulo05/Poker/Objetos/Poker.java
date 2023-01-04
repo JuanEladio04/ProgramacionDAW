@@ -2,7 +2,7 @@ package Capitulo05.Poker.Objetos;
 
 import java.util.Arrays;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class Poker {
 	

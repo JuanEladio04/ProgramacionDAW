@@ -4,7 +4,7 @@ package Capitulo04.Bloque06;
 
 import java.util.Iterator;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class Ejercicio01_Lotería {
 

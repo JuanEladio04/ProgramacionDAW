@@ -1,6 +1,6 @@
 package Capitulo04.Bloque05;
 
-import Utils.Utils;
+import utils.Utils;
 
 //2º.- Crea un array de 20 números enteros generados al azar entre 0 y 10. Analiza el array y calcula el porcentaje (con decimales) de notas aprobadas ( >= 5 ) y de notas suspensas.
 

@@ -1,6 +1,6 @@
 package Capitulo04.Bloque07;
 
-import Utils.Utils;
+import utils.Utils;
 
 //4.- Realiza un método llamado "countOccurrences", que reciba:
 //- Un array de números enteros.

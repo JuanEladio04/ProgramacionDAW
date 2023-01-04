@@ -2,7 +2,7 @@ package Capitulo05.Batalla.Objetos;
 
 import java.util.Arrays;
 
-import Utils.Utils;
+import utils.Utils;
 
 public class CampoBatalla {
 	
