@@ -15,7 +15,7 @@ import utils.Utils;
 //e) "Eliminar elementos cuyo valor esté en un intervalo". Pedirás dos valores al usuario (mínimo y máximo), que conforman un intervalo. Eliminarás los valores de la lista de elementos que se encuentren dentro de ese intervalo (incluyendo los límites) e informarás de cuantos elementos has eliminado de la lista.
 //f) "Imprimir la lista". Mostrarás la lista en pantalla.
 
-public class Ejercicio01_ListaIntergerInteractiva {
+public class Ejercicio01_ListaIntegerInteractiva {
 
 	public static void main(String[] args) {
 		int option, repeat, min, max, suma = 0, media, menor, mayor;

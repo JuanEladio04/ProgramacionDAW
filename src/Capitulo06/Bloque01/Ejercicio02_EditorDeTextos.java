@@ -19,9 +19,11 @@ public class Ejercicio02_EditorDeTextos {
 
 	public static void main(String[] args) {
 		int option;
+		String cut = null;
 		List<String> textLines = new ArrayList<String>();
 		
 		do {
+			System.out.println();
 			System.out.println("Introcuce una opción:"
 								+ "\n" + "1. Abandonar programa."
 								+ "\n" + "2. Agregar línea de texto."
@@ -32,6 +34,7 @@ public class Ejercicio02_EditorDeTextos {
 								+ "\n" + "7. Pegar conjunto de líneas cortadas en determinada posición."
 								+ "\n" + "8. Mostrar fichero."
 								);
+			System.out.println();
 			option = Utils.pideNumeroScanner("");
 			
 			switch (option) {
@@ -40,33 +43,57 @@ public class Ejercicio02_EditorDeTextos {
 				break;
 				
 			case 2: // Agregar línea de texto.
-				// Pedimos la línea de texto.
-				textLines.add(new String(Utils.pideStringScanner("Escribe la linea de texto que desea agregar al documento.")));
+				textLines.add(new String(Utils.pideStringScanner("Escribe la linea de texto que desea agregar al documento."))); // Pedimos la línea de texto.
 				break;
 				
 			case 3: //Agregar línea de texto en cualquier posición.
-				option = Utils.pideNumeroScanner("¿En que posición desea agregar la línea de texto?"); //Pedimos la línea de texto en la que queremos agregarlo.
-				textLines.add(option - 1, new String(Utils.pideStringScanner("Introduce la línea de texto."))); // Pedimos la línea de texto.
+				option = Utils.pideNumeroScanner("¿En que posición desea agregar la línea de texto?") - 1; //Pedimos la línea de texto en la que queremos agregarlo.
+				
+				textLines.add(option, new String(Utils.pideStringScanner("Introduce la línea de texto."))); // Pedimos la línea de texto.
 				break;
 				
 			case 4: //Editar línea de texto.
+				option = Utils.pideNumeroScanner("Introduzca el número de línea que desea modificar") - 1; //Pedimos la línea a modificar.
+				
+				System.out.println(textLines.get(option)); //Mostramos el estado actual de la lista.
+				textLines.set(option, Utils.pideStringScanner("Introduzca de nuevo la línea ya modificada"));
 				
 				break;
 				
-			case 5:
+			case 5: //Borrar línea de texto
+				
+				option = Utils.pideNumeroScanner("Introduce el número de la línea de desea eliminar") - 1;
+				
+				textLines.remove(option);
+				System.out.println("Línea eliminada exitosamente");
+				break;
+				
+			case 6: //Cortar línea
+				option = Utils.pideNumeroScanner("Introduce el número de la línea de desea cortar") - 1;
+				
+				cut = textLines.get(option); //Copiamos la linea en una variable
+				textLines.remove(option); //Una vez copiada podemos eliminar la línea.
+				System.out.println("Línea cortada exitosamente");
+
+				break;
+				
+			case 7: // Pegar la línea
+				if (cut == null) {
+					System.out.println("Primero debes de haber cortado algo");
+				}
+				else {
+					option = Utils.pideNumeroScanner("Introduce el número de la línea donde desea poner el contenido cortado") - 1;
+					
+					textLines.add(option, cut);
+					System.out.println("Se ha pegado el texto correctamente.");
+				}
 				
 				break;
 				
-			case 6:
-				
-				break;
-				
-			case 7:
-				
-				break;
-				
-			case 8:
-				
+			case 8: //Mostrar fichero
+				for (String line : textLines) {
+					System.out.println(line);
+				}
 				break;
 
 			default:
