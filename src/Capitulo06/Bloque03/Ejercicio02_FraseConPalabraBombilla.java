@@ -38,14 +38,12 @@ public class Ejercicio02_FraseConPalabraBombilla {
 		if (frase == null) { //Una excepción en caso de que la frase sea nula.
 			throw new NullPhraseException("La frase está vacía");
 		}
-		else { //Otra excepción por si el usuario introduce menos de 3 palabras.
-			StringTokenizer st = new StringTokenizer(frase);
-			
-			if(st.countTokens() < 3) {
+		else { //Otra excepción por si el usuario introduce menos de 3 palabras.			
+			if(frase.length() < 3) {
 				throw new SmallPhraseException("La frase contiene menos de tres palabras."); 
 			}
 			else { //Otra en caso de que no introduzca la palabra bombilla.
-				if(frase.contains("bombilla") == false || frase.contains("Bombilla") == false) {
+				if(frase.compareTo("bombilla") == frase.length() || frase.compareTo("Bombilla") == frase.length()){
 					throw new NotBombillaException("La frase no contiene la palabra bombilla.");
 				}
 				else {
