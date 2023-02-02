@@ -1,6 +1,4 @@
-package Capitulo06.Bloque03;
-
-import java.util.StringTokenizer;
+package Capitulo07.Bloque03;
 
 import utils.Utils;
 
@@ -43,7 +41,7 @@ public class Ejercicio02_FraseConPalabraBombilla {
 				throw new SmallPhraseException("La frase contiene menos de tres palabras."); 
 			}
 			else { //Otra en caso de que no introduzca la palabra bombilla.
-				if(frase.compareTo("bombilla") == frase.length() || frase.compareTo("Bombilla") == frase.length()){
+				if(frase.compareTo("bombilla") == (frase.length() * 1) || frase.compareTo("Bombilla") == (frase.length() * 1)){
 					throw new NotBombillaException("La frase no contiene la palabra bombilla.");
 				}
 				else {

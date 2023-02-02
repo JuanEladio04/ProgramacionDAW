@@ -34,6 +34,24 @@ public class Utils {
 
     //jOptionPane-------------------------------------------------------------------------------------------------
 
+    /**
+     * 
+     * @param mensaje
+     * @return
+     */
+    public static String pideStringJOptionPane (String mensaje) {
+        String str = JOptionPane.showInputDialog(mensaje);
+        return str;
+    }
+    
+    /**
+     * 
+     * @return
+     */
+    public static String pideStringJOptionPane () {
+        String str = JOptionPane.showInputDialog("Introduce una cadena de texto: ");
+        return str;
+    }
     
 /**
  *     
