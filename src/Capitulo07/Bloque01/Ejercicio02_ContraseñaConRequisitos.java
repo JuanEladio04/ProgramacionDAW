@@ -13,18 +13,51 @@ public class Ejercicio02_ContraseñaConRequisitos {
 
 	public static void main(String[] args) {
 		String contraseña = introduceContraseña();
+		
+		System.out.println("Su contraseña es: " + contraseña);
 	}
 	
 	public static String introduceContraseña() {
-		String password = Utils.pideStringScanner("Introduzca la nueva contraseña");
-		
-		
+		boolean esValida;
+		String password; 
+		do {
+			password = Utils.pideStringScanner("Introduzca la nueva contraseña: ");
+			esValida = compruebaContraseña(password);
+		} while (!esValida);
 		
 		return password;
 	}
 	
-	private static void compruebaContraseña(String passsword) {
+	private static boolean compruebaContraseña(String password) {
+		boolean isValid = false, tieneMayuscula = false, tieneMinuscula = false, tieneDigito = false, tieneSimbolo = false;
 		
+		for (int i = 0; i < password.length(); i++) {
+			char passChar = password.charAt(i);
+			
+			if(Character.isUpperCase(passChar)) {
+				tieneMayuscula = true;
+			}
+			else if (Character.isLowerCase(passChar)){
+				tieneMinuscula = true;
+			}
+			else if (Character.isDigit(passChar)){
+				tieneDigito = true;
+			}
+			else if(!Character.isLetterOrDigit(passChar)) {
+				tieneSimbolo = true;
+			}
+		}
+		
+		if (tieneMayuscula && tieneMinuscula && tieneDigito && tieneSimbolo) {
+			System.out.println("La contraseña es válida");
+			isValid = true;
+		}
+		else {
+			System.out.println("Contraseña no válida, intentelo de nuevo");
+			isValid = false;
+		}
+		
+		return isValid;
 	}
 
 }
