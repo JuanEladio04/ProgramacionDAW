@@ -1,8 +1,5 @@
 package Capitulo07.Bloque01;
 
-import utils.Utils;
-import utils.UtilsMatrices;
-
 //1º.- Realizar un programa que imprima una tabla (simplemente unas líneas en la consola) con los límites máximo y mínimo representables para los diferentes tipos primitivos en Java (Float, int, short, long, float, double). En la tabla también deberá aparecer el número de Floats que cada tipo usa para su representación.
 
 

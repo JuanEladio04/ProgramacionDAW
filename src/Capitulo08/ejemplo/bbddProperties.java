@@ -23,7 +23,6 @@ public class bbddProperties {
 		    
 			try {
 				File file = new File("./src/Capitulo08/ejemplo/bbdd_properties.properties");
-				System.out.println("Fichero encontrado: " + file.exists());
 				propiedades.load(new FileReader(file));
 			
 			} catch (FileNotFoundException e) {

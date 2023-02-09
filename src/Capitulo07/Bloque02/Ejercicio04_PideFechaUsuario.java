@@ -38,8 +38,8 @@ public class Ejercicio04_PideFechaUsuario {
 		
 		System.out.println(fecha);
 
-		SimpleDateFormat sdf = new SimpleDateFormat ("EEE, MMM d, yy ");
-		System.out.println("Fecha actual: " + sdf.format(fecha));
+		SimpleDateFormat sdf = new SimpleDateFormat ("MMM d, yy");
+		System.out.println(sdf.format(fecha));
 			
 	}
 	
