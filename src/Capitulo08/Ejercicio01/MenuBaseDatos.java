@@ -45,14 +45,18 @@ public class MenuBaseDatos {
 			break;
 			
 		case 2: //Realizar Update.
-			
+			try {
+				realizaUpdate(conexion);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			break;
 			
 		case 3: // Realizar Delete.
 			try {
 				realizarDelete(conexion);
 			} catch (SQLException e) {
-				System.out.println("Esa opción es inexistente.");
 				e.printStackTrace();
 			}
 			break;
@@ -77,25 +81,43 @@ public class MenuBaseDatos {
 	 * @param conexion
 	 * @throws SQLException
 	 */
-	public static void realizaInsert(Connection conexion) throws SQLException {
-		String id = Utils.pideStringScanner("Introduce la id del objeto");
-		String idFabricante = Utils.pideStringScanner("Introduce la id del fabricante");
+	public static void realizaUpdate(Connection conexion) throws SQLException {
+		Statement s = (Statement) conexion.createStatement(); 
+
+		int id = Utils.pideNumeroScanner("Introduce la id del objeto a modificar");
+		int idFabricante = Utils.pideNumeroScanner("Introduce la id del fabricante");
 		String bastidor = Utils.pideStringScanner("Introduce el numero de bastidor");
 		String modelo = Utils.pideStringScanner("Introduce el modelo del coche");
 		String color = Utils.pideStringScanner("Introduce el color del coche");
 
-		Statement s = (Statement) conexion.createStatement(); 
-
-		int filasAfectadas = s.executeUpdate("Insert into " + 
-						"coche value(" + 
-						id + "," +
-						idFabricante + "," +
-						bastidor + "," +
-						modelo + "," +
-						color +
-						");"
+		int filasAfectadas = s.executeUpdate("update tutorialjavacoches.coche "
+				+ "set idFabricante = '" + idFabricante + "', "
+				+ "bastidor = '" + bastidor + "', "
+				+ "modelo = '" + modelo  + "', " 
+				+ "color = '" + color + "'\r\n"
+				+ "where id = " + id
 				);
+	}
 	
+	/**
+	 * 
+	 * @param conexion
+	 * @throws SQLException
+	 */
+	public static void realizaInsert(Connection conexion) throws SQLException {
+		Statement s = (Statement) conexion.createStatement(); 
+		
+		int id = getSiguienteIdValidoConcesionario(conexion);
+		int idFabricante = Utils.pideNumeroScanner("Introduce la id del fabricante");
+		String bastidor = Utils.pideStringScanner("Introduce el numero de bastidor");
+		String modelo = Utils.pideStringScanner("Introduce el modelo del coche");
+		String color = Utils.pideStringScanner("Introduce el color del coche");
+
+		int filasAfectadas = s.executeUpdate("insert into tutorialjavacoches.coche (id, idFabricante, bastidor, modelo, color)"
+                + "values('" + id + "','" + idFabricante
+                + "','" + bastidor + "','" + modelo + "','" + color + "')"
+				);
+			
 		System.out.println("Filas afectadas: " + filasAfectadas);
 	
 		s.close();
@@ -158,6 +180,23 @@ public class MenuBaseDatos {
 		
 		return (Connection) DriverManager.getConnection ("jdbc:mysql://" + host + "/" + schema + properties, user, password);			
 		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException 
+	 */
+	private static int getSiguienteIdValidoConcesionario(Connection conexion) throws SQLException {
+		Statement s = conexion.createStatement();
+		ResultSet rs = s.executeQuery("select max(id) as maximoId "
+				+ "from tutorialjavacoches.coche");
+	
+		if (rs.next()) {
+			return rs.getInt(1) + 1;
+		}
+		
+		return 1;
 	}
 
 }
