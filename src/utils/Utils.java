@@ -123,8 +123,17 @@ public class Utils {
  */
   public static int pideNumeroScanner () {
       System.out.println("Introduce un número");
-      Scanner sc = new Scanner (System.in);
-      return sc.nextInt();
+      Scanner sc = new Scanner(System.in);
+		
+		while (true) {
+			try {
+				return sc.nextInt();
+			} catch (Exception ex) {
+				System.out.println("Error, introduce un número entero: ");
+				sc.nextLine();
+			}
+		}
+		
   }
   
 /**
@@ -134,8 +143,17 @@ public class Utils {
  */
   public static int pideNumeroScanner (String mensaje) {
       System.out.println(mensaje);
-      Scanner sc = new Scanner (System.in);
-      return sc.nextInt();
+      Scanner sc = new Scanner(System.in);
+		
+		while (true) {
+			try {
+				return sc.nextInt();
+			} catch (Exception ex) {
+				System.out.println("Error, introduce un número entero: ");
+				sc.nextLine();
+			}
+		}
+		
   }
   
   /**
