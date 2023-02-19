@@ -9,6 +9,7 @@ import java.sql.Statement;
 import Capitulo08.bloque02.controladores.Delete;
 import Capitulo08.bloque02.controladores.Insercion;
 import Capitulo08.bloque02.controladores.Listado;
+import Capitulo08.bloque02.controladores.Update;
 import Capitulo08.ejemplo.bbddProperties;
 import utils.Utils;
 
@@ -100,7 +101,11 @@ public class Main {
 				break;
 				
 			case 2: //Realizar Update.
-				
+				try {
+					Update.realizaUpdate(conexion, tabla);
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
 				break;
 				
 			case 3: // Realizar Delete.

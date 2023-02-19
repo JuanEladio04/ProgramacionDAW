@@ -26,7 +26,7 @@ public class Insercion {
 				"insert into tutorialjavacoches." + tabla
 				+ " values (" + columnasAInsertar(numColumnas) + ")");
 		
-		ps.setInt(1, getSiguienteIdValidoConcesionario(conexion));		
+		ps.setInt(1, getSiguienteIdValido(conexion, tabla));		
 		
 		for (int i = 2; i <= numColumnas ; i++) {
 			valorUsuario = Utils.pideStringScanner("Introduce el valor de la columna: " + Listado.muestraNombreColumna(conexion, tabla, i));
@@ -49,10 +49,10 @@ public class Insercion {
 	 * @return
 	 * @throws SQLException 
 	 */
-	private static int getSiguienteIdValidoConcesionario(Connection conexion) throws SQLException {
+	private static int getSiguienteIdValido(Connection conexion, String tabla) throws SQLException {
 		Statement s = conexion.createStatement();
 		ResultSet rs = s.executeQuery("select max(id) as maximoId "
-				+ "from tutorialjavacoches.coche");
+				+ "from tutorialjavacoches." + tabla);
 	
 		if (rs.next()) {
 			return rs.getInt(1) + 1;
