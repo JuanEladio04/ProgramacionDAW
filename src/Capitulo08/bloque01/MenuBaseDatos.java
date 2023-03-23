@@ -1,4 +1,4 @@
-package Capitulo08.Ejercicio01;
+package Capitulo08.bloque01;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
